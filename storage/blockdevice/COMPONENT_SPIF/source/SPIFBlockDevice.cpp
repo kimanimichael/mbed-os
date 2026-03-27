@@ -233,7 +233,7 @@ int SPIFBlockDevice::read(void *buffer, bd_addr_t addr, bd_size_t size)
     }
 
     int status = SPIF_BD_ERROR_OK;
-    tr_debug("Read - Inst: 0x%xh", _read_instruction);
+    //tr_debug("Read - Inst: 0x%xh", _read_instruction);
     _mutex->lock();
 
     // Set Dummy Cycles for Specific Read Command Mode
@@ -259,7 +259,7 @@ int SPIFBlockDevice::program(const void *buffer, bd_addr_t addr, bd_size_t size)
     uint32_t offset = 0;
     uint32_t chunk = 0;
 
-    tr_debug("program - Buff: 0x%" PRIx32 "h, addr: %llu, size: %llu", (uint32_t)buffer, addr, size);
+    // tr_debug("program - Buff: 0x%" PRIx32 "h, addr: %llu, size: %llu", (uint32_t)buffer, addr, size);
 
     while (size > 0) {
 
